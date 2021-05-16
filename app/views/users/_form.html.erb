@@ -1,0 +1,72 @@
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dob %>
+    <%= form.datetime_select :dob %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ident_num %>
+    <%= form.text_field :ident_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ident_state %>
+    <%= form.text_field :ident_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ident_expir %>
+    <%= form.date_select :ident_expir %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ident_img %>
+    <%= form.text_field :ident_img %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recom_num %>
+    <%= form.text_field :recom_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recom_issuer %>
+    <%= form.text_field :recom_issuer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recom_expir %>
+    <%= form.date_select :recom_expir %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recom_img %>
+    <%= form.text_field :recom_img %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

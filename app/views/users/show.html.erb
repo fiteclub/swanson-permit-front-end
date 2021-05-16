@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @user.dob %>
+</p>
+
+<p>
+  <strong>Ident num:</strong>
+  <%= @user.ident_num %>
+</p>
+
+<p>
+  <strong>Ident state:</strong>
+  <%= @user.ident_state %>
+</p>
+
+<p>
+  <strong>Ident expir:</strong>
+  <%= @user.ident_expir %>
+</p>
+
+<p>
+  <strong>Ident img:</strong>
+  <%= @user.ident_img %>
+</p>
+
+<p>
+  <strong>Recom num:</strong>
+  <%= @user.recom_num %>
+</p>
+
+<p>
+  <strong>Recom issuer:</strong>
+  <%= @user.recom_issuer %>
+</p>
+
+<p>
+  <strong>Recom expir:</strong>
+  <%= @user.recom_expir %>
+</p>
+
+<p>
+  <strong>Recom img:</strong>
+  <%= @user.recom_img %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
