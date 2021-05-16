@@ -12,7 +12,7 @@
 
 <p>
   <strong>Dob:</strong>
-  <%= @user.dob %>
+  <%= @user.dob.to_date %>
 </p>
 
 <p>
@@ -27,7 +27,7 @@
 
 <p>
   <strong>Ident expir:</strong>
-  <%= @user.ident_expir %>
+  <%= @user.ident_expir.to_date %>
 </p>
 
 <p>
@@ -47,7 +47,7 @@
 
 <p>
   <strong>Recom expir:</strong>
-  <%= @user.recom_expir %>
+  <%= @user.recom_expir.to_date %>
 </p>
 
 <p>
