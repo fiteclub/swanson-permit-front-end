@@ -72,7 +72,7 @@ class UsersController < ApplicationController
       # This method is necessary because user data is currently nested one layer 
       # deep in the api's json. It should be removed when the json is altered
       if @user.id.is_a? Integer
-        @user = @user
+        @user
       else
         @user = @user.user
       end
