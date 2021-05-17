@@ -30,7 +30,7 @@
 
       <div class="form-group">
         <span>Ident expir</span>
-        <span class="form-control"><%= @user.ident_expir.to_date %></span>
+        <span class="form-control"><%= @user.ident_expir %></span>
       </div>
 
       <br>
@@ -60,7 +60,7 @@
 
       <div class="form-group">
         <span>Recom expir</span>
-        <span class="form-control"><%= @user.recom_expir.to_date %></span>
+        <span class="form-control"><%= @user.recom_expir %></span>
       </div>
 
       <br>
@@ -112,7 +112,5 @@
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
-
-  window.location.reload();
   }
 </script>
