@@ -1,8 +1,8 @@
 require 'active_resource'
 
 class User < ActiveResource::Base
-  self.site = ENV["ACTIVERESOURCE_ROOT_URL"]
-  self.element_name = "user"
+  self.site = ENV['ACTIVERESOURCE_ROOT_URL']
+  self.element_name = 'user'
   self.include_format_in_path = false
 
   # https://github.com/wolframarnold/SFMeetup-Talk-on-ActiveResource-2011-12-08/tree/master/app/models

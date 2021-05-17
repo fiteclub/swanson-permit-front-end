@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :set_user, only: %i[show edit update destroy]
 
   # GET /users or /users.json
   def index
@@ -7,9 +7,7 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1 or /users/1.json
-  def show
-    fix_user_get
-  end
+  def show; end
 
   # GET /users/new
   def new
@@ -17,9 +15,7 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit
-    fix_user_get
-  end
+  def edit; end
 
   # POST /users or /users.json
   def create
@@ -27,7 +23,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: "User was successfully created." }
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -43,7 +39,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       # ActiveResource uses update_attributes instead of update
       if @user.update_attributes(user_params)
-        format.html { redirect_to @user, notice: "User was successfully updated." }
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -57,29 +53,31 @@ class UsersController < ApplicationController
     set_user
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
+      format.html { redirect_to action: :index, notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    def fix_user_get
-      # This method is necessary because user data is currently nested one layer 
-      # deep in the api's json. It should be removed when the json is altered
-      if @user.id.is_a? Integer
-        @user
-      else
-        @user = @user.user
-      end
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:name, :email, :dob, :ident_num, :ident_state, :ident_expir, :ident_img, :recom_num, :recom_issuer, :recom_expir, :recom_img)
+  def fix_user_get
+    # This method is necessary because user data is currently nested one layer
+    # deep in the api's json. It should be removed when the json is altered
+    if @user.id.is_a? Integer
+      @user
+    else
+      @user = @user.user
     end
+  end
+
+  # Only allow a list of trusted parameters through.
+  def user_params
+    params.require(:user).permit(:name, :email, :dob, :ident_num, :ident_state, :ident_expir, :ident_img, :recom_num,
+                                 :recom_issuer, :recom_expir, :recom_img)
+  end
 end

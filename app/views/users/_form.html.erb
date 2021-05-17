@@ -1,74 +1,72 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="container p-3 my-3 border border-primary">
+  <%= form_with(model: user) do |form| %>
+    <% if user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :name %>
+      <%= form.text_field :name, {class:"form-control", placeholder:"Enter name"} %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :email %>
+      <%= form.text_field :email, {class:"form-control", placeholder:"Enter email"}  %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :dob %>
+      <%= form.text_field :dob, {class:"form-control", placeholder:"Enter date of birth"} %>
+    </div>
+
+    <div class="container p-3 my-3 border">
+      <div class="form-group">
+        <%= form.label :ident_num %>
+        <%= form.text_field :ident_num, {class:"form-control", placeholder:"Enter ID number"}  %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :ident_state %>
+        <%= form.text_field :ident_state, {class:"form-control", placeholder:"Enter ID state"} %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :ident_expir %>
+        <%= form.text_field :ident_expir, {class:"form-control", placeholder:"Enter ID expiration date"}  %>
+      </div>
+    </div>
+
+
+    <div class="container p-3 my-3 border">
+      <div class="form-group">
+        <%= form.label :recom_num %>
+        <%= form.text_field :recom_num, {class:"form-control", placeholder:"Enter recommendation number"} %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :recom_issuer %>
+        <%= form.text_field :recom_issuer, {class:"form-control", placeholder:"Enter recommendation issuer name"} %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :recom_expir %>
+        <%= form.text_field :recom_expir, {class:"form-control", placeholder:"Enter recommendation expiration date"} %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Submit", class:"btn btn-outline-success" %>
     </div>
   <% end %>
+  </form>
+</div>
 
-<form class="form-inline">
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :dob %>
-    <%= form.text_field :dob%>
-  </div>
-
-  <div class="field">
-    <%= form.label :ident_num %>
-    <%= form.text_field :ident_num %>
-  </div>
-
-  <div class="field">
-    <%= form.label :ident_state %>
-    <%= form.text_field :ident_state %>
-  </div>
-
-  <div class="field">
-    <%= form.label :ident_expir %>
-    <%= form.text_field :ident_expir %>
-  </div>
-
-  <div class="field">
-    <%= form.label :ident_img %>
-    <%= form.text_field :ident_img %>
-  </div>
-
-  <div class="field">
-    <%= form.label :recom_num %>
-    <%= form.text_field :recom_num %>
-  </div>
-
-  <div class="field">
-    <%= form.label :recom_issuer %>
-    <%= form.text_field :recom_issuer %>
-  </div>
-
-  <div class="field">
-    <%= form.label :recom_expir %>
-    <%= form.text_field :recom_expir %>
-  </div>
-
-  <div class="field">
-    <%= form.label :recom_img %>
-    <%= form.text_field :recom_img %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-</form>

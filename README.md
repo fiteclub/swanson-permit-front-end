@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the frontend to code-challenge-dunk api
+* [api is deployed here](https://shrouded-citadel-46945.herokuapp.com/api-docs/)
+* [frontend is deployed here](https://gonzocare-by-dr-gonzo.herokuapp.com/)
 
-Things you may want to cover:
+Note: to run locally, set environmental variable ACTIVERESOURCE_ROOT_URL to the api root
 
-* Ruby version
+```$ env ACTIVERESOURCE_ROOT_URL=http://localhost:3000/api/v1```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Note to future self: beware the monkeypatch javascript in show.html.erb if model names are changed.  Why is it this way?  Because ActiveResource doesn't like to send files and no one else has ever had this problem.
