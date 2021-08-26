@@ -16,10 +16,10 @@ class User < ActiveResource::Base
     string :ident_state
     string :ident_expir
     string :ident_img
-    string :recom_num
-    string :recom_issuer
-    string :recom_expir
-    string :recom_img
+    string :permit_num
+    string :permit_issuer
+    string :permit_expir
+    string :permit_img
     string :created_at
     string :updated_at
   end

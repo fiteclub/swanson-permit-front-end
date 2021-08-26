@@ -50,25 +50,25 @@
     <div class="container p-3 my-3 border">
       <div class="form-group">
         <span>Recom num</span>
-        <span class="form-control"><%= @user.recom_num %></span>
+        <span class="form-control"><%= @user.permit_num %></span>
       </div>
 
       <div class="form-group">
         <span>Recom issuer</span>
-        <span class="form-control"><%= @user.recom_issuer %></span>
+        <span class="form-control"><%= @user.permit_issuer %></span>
       </div>
 
       <div class="form-group">
         <span>Recom expir</span>
-        <span class="form-control"><%= @user.recom_expir %></span>
+        <span class="form-control"><%= @user.permit_expir %></span>
       </div>
 
       <br>
       <div class="form-group">
         <div class="container" >
           <span>
-            <a href="<%= @user.recom_img.url %>">
-              <img class="docthumb rounded" src="<%= @user.recom_img.url %>">
+            <a href="<%= @user.permit_img.url %>">
+              <img class="docthumb rounded" src="<%= @user.permit_img.url %>">
             </a> 
           </span>
           <input id="recomFileUpload" type="file" name="recomFileUpload" />
@@ -93,7 +93,7 @@
   }
 
   async function uploadRecom() {
-    var field = "recom_img";
+    var field = "permit_img";
     uploadFile(field, recomFileUpload);
   }
 
