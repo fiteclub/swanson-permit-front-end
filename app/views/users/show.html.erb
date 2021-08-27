@@ -49,17 +49,17 @@
 
     <div class="container p-3 my-3 border">
       <div class="form-group">
-        <span>Recom num</span>
+        <span>Permit num</span>
         <span class="form-control"><%= @user.permit_num %></span>
       </div>
 
       <div class="form-group">
-        <span>Recom issuer</span>
+        <span>Permit issuer</span>
         <span class="form-control"><%= @user.permit_issuer %></span>
       </div>
 
       <div class="form-group">
-        <span>Recom expir</span>
+        <span>Permit expir</span>
         <span class="form-control"><%= @user.permit_expir %></span>
       </div>
 
@@ -71,8 +71,8 @@
               <img class="docthumb rounded" src="<%= @user.permit_img.url %>">
             </a> 
           </span>
-          <input id="recomFileUpload" type="file" name="recomFileUpload" />
-          <button id="upload-button" onclick="uploadRecom()"> Upload </button>
+          <input id="permitFileUpload" type="file" name="permitFileUpload" />
+          <button id="upload-button" onclick="uploadPermit()"> Upload </button>
         </div>
       </div>
     </div>
@@ -92,9 +92,9 @@
     uploadFile(field, identFileUpload);
   }
 
-  async function uploadRecom() {
+  async function uploadPermit() {
     var field = "permit_img";
-    uploadFile(field, recomFileUpload);
+    uploadFile(field, permitFileUpload);
   }
 
   async function uploadFile(field, fileInput) {
