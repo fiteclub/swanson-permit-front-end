@@ -4,9 +4,6 @@ See it Live! -- [https://swanson-permit-front-end.herokuapp.com](https://swanson
 
 This is a front end to the [Swanson Permit API](https://github.com/fiteclub/swanson-permit-api)
 
-Note: to run locally, set environmental variable ACTIVERESOURCE_ROOT_URL to the api root
-
-```$ env ACTIVERESOURCE_ROOT_URL=http://localhost:3000/api/v1```
 
 
 ## Installation
